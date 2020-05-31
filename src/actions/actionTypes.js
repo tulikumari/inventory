@@ -1,0 +1,2 @@
+export const GET_ALL_TYPES = 'GET_ALL_TYPES';
+export const CREATE_NEW_TYPES = 'CREATE_NEW_TYPES';
