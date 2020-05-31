@@ -6,3 +6,15 @@ export const createTypes = (types) => {
       types: types
     }
   };
+export const editTypes = (data) => {
+    return {
+        type: actionTypes.EDIT_TYPES,
+        data: data
+    }
+}
+export const deleteTypes = (id) => {
+  return {
+      type: actionTypes.DELETE_TYPES,
+      id: id
+  }
+}
