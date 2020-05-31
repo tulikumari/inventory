@@ -18,3 +18,28 @@ export const deleteTypes = (id) => {
       id: id
   }
 }
+export const addItems = (itemdata) => {
+  return {
+      type: actionTypes.ADDITEMS,
+      itemdata: itemdata
+  }
+}
+export const addFields = (itemdata) => {
+  return {
+      type: actionTypes.ADD_FIELDS,
+      itemdata: itemdata
+  }
+}
+export const editFields = (data) => {
+  return {
+      type: actionTypes.EDIT_FIELDS,
+      data: data
+  }
+}
+export const removeFields = (data,filed_id) => {
+  return {
+      type: actionTypes.EDIT_FIELDS,
+      data: data,
+      filed_id:filed_id
+  }
+}

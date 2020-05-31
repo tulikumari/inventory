@@ -7,6 +7,7 @@ import { BrowserRouter as Router,
     useParams } from "react-router-dom";
 import Home from "../../Screens/home";
 import ManageTypes from "../../Screens/manageTypes";
+import AddTypes from "../../Screens/AddTypes";
 
 class Routermain extends Component {
     render() {
@@ -15,6 +16,7 @@ class Routermain extends Component {
                 <Router>
                      <Route exact path="/" component={Home} />
                      <Route exact path="/manageTypes" component={ManageTypes} />  
+                     <Route exact path="/addType/:id" url="/addType/id" component={AddTypes} />  
                 </Router>
                 
             

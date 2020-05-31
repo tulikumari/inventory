@@ -30,10 +30,11 @@ header{ background-color: #f9f7fd; }
    }
 .box-detail { border-top:0; padding:10px; }
 .box-detail label{ display: block; margin: 0; padding: 0; padding-bottom: 2px; padding-top: 10px;} 
-.box-detail input[type="text"]{ width: 100%; border:1px solid #000; display: block;} 
-.box-detail select{ width: 100%; }
+.box-detail input[type="text"]{ width: 100%; border:1px solid #c5c2c3; display: block;} 
+.box-detail select{ width: 100%; border:1px solid #c5c2c3; }
 .field-sec{overflow: hidden; margin-bottom: 10px; }
 .field-sec input[type="text"], .field-sec select{ width: 50%; float: left;}
 .field-sec select{ height: 28px; }
 .add_field{ text-align: center; margin-top: 15px; }
-.add_type_btn{ margin-top: 25px; }
+.add_type_btn{ margin-top: 21px; }
+.add_type_btn, .add_field button{ background-color:#333; width: 100%; border: 0; color:#fff; padding-top:5px; padding-bottom:5px; }

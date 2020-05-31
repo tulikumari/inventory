@@ -26,17 +26,24 @@ class Index extends Component {
     let types = {
       id: typeLength,
       object_type:'',
-      object_title:'Model',
+      object_title:'Title',
       fields:[
-        {title:'Model',type:'small_text'}
+        {id:0,title:'Title',type:'small_text'}
       ],
     }
     this.props.createTypes(types);
+
+    // Entry in type_item and type_field
+    this.props.addItems(typeLength);      
   }
 
   AddField(data,e){
     e.preventDefault();
-    let types = {title:'',type:'small_text'}
+    let fieldLength = data.fields.length;
+    let lastFieldId = data.fields[fieldLength-1].id;
+    lastFieldId = ++lastFieldId;
+
+    let types = {id:lastFieldId,title:'',type:'small_text'}
     data.fields.push(types);
     this.props.editTypes(data);
   }
@@ -55,6 +62,7 @@ class Index extends Component {
   }
   objectFieldTypeEdit(e,data,i){
     if(e.target.value=="remove_text") {
+      //this.props.removeFields(data.id,data.fields[i].id);
       data.fields.splice( i, 1 );
     } else {
       data.fields[i].type = e.target.value;
@@ -139,7 +147,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     createTypes: types => dispatch(typesAction.createTypes(types)),
     editTypes: data => dispatch(typesAction.editTypes(data)),
-    deleteTypes: index =>dispatch(typesAction.deleteTypes(index))
+    deleteTypes: index =>dispatch(typesAction.deleteTypes(index)),
+    addItems: typesItem =>dispatch(typesAction.addItems(typesItem)),
+    
   }
 };
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 
 class Header extends Component {
   
@@ -19,8 +19,8 @@ class Header extends Component {
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link active">All</a>
-                <a href="#" class="nav-item nav-link">Profile</a>
+                <a href="/addType/all" class="nav-item nav-link active">All</a>
+                {this.props.types.map((type, i) => <a href={`/addType/${type.id}`} key={i} class="nav-item nav-link">{(type.object_type==="")? "No Title":type.object_type}</a>)}
                 <a href="/manageTypes" class="nav-item nav-link">Manage Types</a>
             </div>           
         </div>
@@ -31,4 +31,12 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    types: state.types
+  }
+};
+
+export default connect(mapStateToProps)(Header);
+
